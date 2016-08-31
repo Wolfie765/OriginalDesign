@@ -1,17 +1,12 @@
-//Variables
-
-void setup()
-{
-  size(1000,1000);
-
-}
-
-void draw()
-{
 /*        Rule for the FloorY's.
 if FloorY# = even # (i.e. FloorY2, FloorY8), then it >>>>>DOES NOT<<<<<<<<< starts at 10.
 if FloorY# = odd # (i.e. FloorY5, FloorY7), then it >>>>>DOES<<<<<< starts at 0.
 */
+
+void setup()
+{
+    size(400,400);
+}
 //Global Variables
         int FloorX = 0;
         int FloorY = 200;
@@ -52,7 +47,7 @@ if FloorY# = odd # (i.e. FloorY5, FloorY7), then it >>>>>DOES<<<<<< starts at 0.
         int FloorY21 = 215;
 
 //shape design
-int Floor = function (x, y) {
+public void Floor(int x, int y) {
 
     //Local Variables
         int MiddleY = y + 15;
@@ -92,8 +87,7 @@ int Floor = function (x, y) {
             vertex(x, FloorTop);
             vertex(x - 1, y + 6);
         endShape();
-
-
+    
     //top
     stroke(y, 0, x);
     fill(x, y, 0, 100);
@@ -141,7 +135,7 @@ int Floor = function (x, y) {
     endShape();
 };
 
-int Row = function (x, y) {
+public void Row(int x, int y) {
     Floor(x + 10, y);
     Floor(x + 30, y);
     Floor(x + 50, y);
@@ -165,8 +159,8 @@ int Row = function (x, y) {
     Floor(x + 410, y);
 };
 
-void draw()
-{    
+void draw(){
+    
 
 //The Blocks    
     Row(-10, FloorY1);
@@ -203,4 +197,3 @@ change = -10; }
 if (COLURRRRSSSSS < 0) {
 change = 10; }
 };
-
